@@ -3,6 +3,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 offer mb-3 mb-lg-0"></div>
+          @if (!auth()->user())
           <div class="col-lg-6 text-center text-lg-right">
             <ul class="menu list-inline mb-0">
               <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
@@ -11,6 +12,20 @@
               <li class="list-inline-item"><a href="#">Recently viewed</a></li>
             </ul>
           </div>
+          @else
+          <div class="col-lg-6 text-center text-lg-right">
+            <ul class="menu list-inline mb-0">
+              <li class="list-inline-item"><a href="#">Hi,  <?= auth()->user()->name ?></a></li>
+              <li class="list-inline-item"><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+              </form>  
+              </li>
+              <li class="list-inline-item"><a href="#">Daftar Transaksi</a></li>
+            </ul>
+          </div>
+          @endif
         </div>
       </div>
       <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
