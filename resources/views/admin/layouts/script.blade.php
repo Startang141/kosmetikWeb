@@ -8,6 +8,12 @@
 <script src="<?= url('template/assets/vendor/chart.js/dist/Chart.extension.js') ?>"></script>
 <!-- Argon JS -->
 <script src="<?= url('template/assets/js/argon.js?v=1.2.0') ?>"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $('#data').DataTable();
+} );
+</script>
 </body>
 
 </html>

@@ -18,13 +18,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="examples/icons.html">
+              <a class="nav-link" href="<?= route('produk.index') ?>">
                 <i class="ni ni-planet text-orange"></i>
                 <span class="nav-link-text">Data Produk</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="examples/map.html">
+              <a class="nav-link" href="">
                 <i class="ni ni-pin-3 text-primary"></i>
                 <span class="nav-link-text">Data Transaksi</span>
               </a>
@@ -42,7 +42,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="examples/login.html">
+              <a class="nav-link" href="<?= route('kategori.index') ?>">
                 <i class="ni ni-key-25 text-info"></i>
                 <span class="nav-link-text">Kategori ?</span>
               </a>

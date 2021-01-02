@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Kategori;
+use App\Models\Produk;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,5 +17,13 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Auth::routes();
-Route::get('/admin/home', 'HomeController@handleAdmin')->name('admin.route')->middleware('admin');
+Route::prefix('admin')
+    ->middleware(['admin'])
+    ->group(function () {
+        Route::get('/home', 'HomeController@handleAdmin')
+            ->name('admin.route');
+        Route::resource('produk', 'ProdukController');
+        Route::resource('kategori', 'KategoriController');
+        // Route::resource('transaksi', 'TransaksiController');
+    });
 Route::get('/', 'HomeController@index')->name('home');

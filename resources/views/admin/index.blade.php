@@ -1,13 +1,6 @@
-@include('admin.layouts.style')
-  <!-- Sidenav -->
-  @include('admin.layouts.sidebar')
-  <!-- Main content -->
-  <div class="main-content" id="panel">
-    <!-- Topnav -->
-    @include('admin.layouts.topbar')
-    <!-- Header -->
-    <!-- Header -->
-    @include('admin.layouts.header')
+@extends('admin/layouts/app')
+@section('title', 'Dashboard')
+@section('content')
     <!-- Page content -->
     <div class="container-fluid mt--6">
       <div class="row">
@@ -284,10 +277,4 @@
           </div>
         </div>
       </div>
-      <!-- Footer -->
-      @include('admin.layouts.footer')
-    </div>
-  </div>
-  <!-- Argon Scripts -->
-  <!-- Core -->
- @include('admin.layouts.script')
+@endsection
