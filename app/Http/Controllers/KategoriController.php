@@ -71,7 +71,9 @@ class KategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Kategori::findOrFail($id);
+        $data->update(['nama_kategori' => $request->nama_kategori]);
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -82,6 +84,8 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Kategori::findOrFail($id);
+        $data->delete();
+        return redirect()->route('kategori.index');
     }
 }

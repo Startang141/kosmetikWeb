@@ -30,8 +30,8 @@
                         <th scope="row"><?= $no++ ?></th>
                         <td class="budget"><?= $k->nama_kategori ?></td>
                         <td>
-                            <button class="btn btn-primary">Edit</button>
-                            <button class="btn btn-danger">Hapus</button>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#editKategori<?= $k->id ?>">Edit</button>
+                            <button class="btn btn-danger" data-toggle="modal" data-target="#hapusKategori<?= $k->id ?>">Hapus</button>
                         </td>
                       </tr>
                       @endforeach
@@ -70,3 +70,60 @@
       </div>
     </div>
   </div>
+  
+  @foreach ($kategori as $k)
+  {{-- Modal Edit Produk --}}
+  <div class="modal fade" id="editKategori<?= $k->id ?>" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Kategori</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="<?= route('kategori.update', $k->id) ?>" method="POST">
+              @method('PUT')
+              @csrf
+              <div class="form-group">
+                <label class="col-form-label">Nama Kategori</label>
+                <input type="text" name="nama_kategori" value="<?= $k->nama_kategori ?>" class="form-control" id="recipient-name">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+@endforeach
+
+  @foreach ($kategori as $k)
+  {{-- Modal Hapus Kategori --}}
+  <div class="modal fade" id="hapusKategori<?= $k->id ?>" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Hapus Kategori : <?= $k->nama_kategori ?></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="<?= route('kategori.destroy', $k->id) ?>" method="POST">
+              @method('DELETE')
+              @csrf
+              <p>Yakin hapus kategori ini ??</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-danger">Hapus</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+@endforeach
