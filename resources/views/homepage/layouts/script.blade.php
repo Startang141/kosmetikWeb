@@ -18,10 +18,11 @@
       </div>
       <!-- *** COPYRIGHT END ***-->
       <!-- JavaScript files-->
-      <script src="<?= 'kosmetik/vendor/jquery/jquery.min.js' ?>"></script>
-      <script src="<?= 'kosmetik/vendor/bootstrap/js/bootstrap.bundle.min.js' ?>"></script>
-      <script src="<?= 'kosmetik/vendor/jquery.cookie/jquery.cookie.js' ?>"> </script>
-      <script src="<?= 'kosmetik/vendor/owl.carousel/owl.carousel.min.js' ?>"></script>
-      <script src="<?= 'kosmetik/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js' ?>"></script>
-      <script src="<?= 'kosmetik/js/front.js' ?>"></script>
+      <script src="<?= url('kosmetik/vendor/jquery/jquery.min.js') ?>"></script>
+      <script src="<?= url('kosmetik/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+      <script src="<?= url('kosmetik/vendor/jquery.cookie/jquery.cookie.js') ?>"> </script>
+      <script src="<?= url('kosmetik/vendor/owl.carousel/owl.carousel.min.js') ?>"></script>
+      <script src="<?= url('kosmetik/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js') ?>"></script>
+      <script src="<?= url('kosmetik/js/front.js') ?>"></script>
     </body>
+</html>

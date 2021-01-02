@@ -6,10 +6,8 @@
           @if (!auth()->user())
           <div class="col-lg-6 text-center text-lg-right">
             <ul class="menu list-inline mb-0">
-              <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-              <li class="list-inline-item"><a href="register.html">Register</a></li>
-              <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-              <li class="list-inline-item"><a href="#">Recently viewed</a></li>
+              <li class="list-inline-item"><a href="<?= route('login') ?>">Login</a></li>
+              <li class="list-inline-item"><a href="<?= route('register') ?>">Register</a></li>
             </ul>
           </div>
           @else
@@ -64,13 +62,15 @@
         </div>
         <div id="navigation" class="collapse navbar-collapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-            <li class="nav-item ml-2"><a href="#" class="nav-link">List Produk</a></li>
+            <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
+            <li class="nav-item ml-2"><a href="<?= route('listProduk') ?>" class="nav-link">List Produk</a></li>
           </ul>
           <div class="navbar-buttons d-flex justify-content-end">
             <!-- /.nav-collapse-->
             <div id="search-not-mobile" class="navbar-collapse collapse"></div><a data-toggle="collapse" href="#search" class="btn navbar-btn btn-primary d-none d-lg-inline-block"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></a>
-            <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block"><a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span>3 items in cart</span></a></div>
+            @if (auth()->user())
+            <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block"><a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span>0 items in cart</span></a></div>
+            @endif
           </div>
         </div>
       </div>

@@ -2,31 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        return view('home');
+        $data['producs'] = Produk::limit(5)->get();
+        return view('home', $data);
     }
-    public function handleAdmin()
+
+    function listProduk()
     {
-        return view('admin.index');
+        $data['producs'] = Produk::get();
+        return view('homepage.listProduk.index', $data);
+    }
+
+    function detailProduk($id)
+    {
+        $data['produk'] = Produk::with('kategori')->findOrFail($id);
+        // dd($data['produk']);
+        return view('homepage.listProduk.detail', $data);
     }
 }

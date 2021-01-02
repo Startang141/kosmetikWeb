@@ -1,6 +1,5 @@
-@include('homepage/layouts/style')
-    <!-- navbar-->
-    @include('homepage/layouts/header')
+@extends('homepage/layouts/app')
+    @section('content')
     <div id="all">
       <div id="content">
         <div class="container">
@@ -56,57 +55,26 @@
           </div>
           <div class="container">
             <div class="product-slider owl-carousel owl-theme">
+              @foreach ($producs as $p)
               <div class="item">
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="detail.html"><img src="<?= 'kosmetik/img/product1.jpg' ?>" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.html"><img src="<?= 'kosmetik/img/product1_2.jpg' ?>" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="#"><img src="<?= url('produk/', $p->gambar) ?>" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="#"><img src="<?= url('produk/', $p->gambar) ?>" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="detail.html" class="invisible"><img src="<?= 'kosmetik/img/product1.jpg' ?>" alt="" class="img-fluid"></a>
+                  </div><a href="#" class="invisible"><img src="<?= url('produk/', $p->gambar) ?>" alt="" class="img-fluid"></a>
                   <div class="text">
-                    <h3><a href="detail.html">Fur coat with very but very very long name</a></h3>
+                    <h3><a href="#"><?= $p->nama_produk ?></a></h3>
                     <p class="price"> 
-                      <del></del>$143.00
-                    </p>
-                  </div>
-                  <div class="ribbon sale">
-                    <div class="theribbon">SALE</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <div class="ribbon new">
-                    <div class="theribbon">NEW</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <div class="ribbon gift">
-                    <div class="theribbon">GIFT</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="product">
-                  <div class="flip-container">
-                    <div class="flipper">
-                      <div class="front"><a href="detail.html"><img src="<?= 'kosmetik/img/product3.jpg' ?>" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.html"><img src="<?= 'kosmetik/img/product3_2.jpg' ?>" alt="" class="img-fluid"></a></div>
-                    </div>
-                  </div><a href="detail.html" class="invisible"><img src="<?= 'kosmetik/img/product3.jpg' ?>" alt="" class="img-fluid"></a>
-                  <div class="text">
-                    <h3><a href="detail.html">Black Blouse Versace</a></h3>
-                    <p class="price"> 
-                      <del></del>$143.00
+                      <del></del>Rp. <?= $p->harga ?>
                     </p>
                   </div>
                 </div>
               </div>
+              @endforeach
               </div>
             </div>
           </div>
         </div>
-       
-     @include('homepage/layouts/footer')
-    <!-- /#footer-->
-    <!-- *** FOOTER END ***-->
-    @include('homepage/layouts/script')
-</html>
+    @endsection

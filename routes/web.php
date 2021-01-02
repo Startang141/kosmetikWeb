@@ -20,10 +20,21 @@ Auth::routes();
 Route::prefix('admin')
     ->middleware(['admin'])
     ->group(function () {
-        Route::get('/home', 'HomeController@handleAdmin')
+        Route::get('/home', 'AdminController@index')
             ->name('admin.route');
         Route::resource('produk', 'ProdukController');
         Route::resource('kategori', 'KategoriController');
         // Route::resource('transaksi', 'TransaksiController');
     });
+
+Route::prefix('produk')
+    ->group(function () {
+        Route::get('/list', 'HomeController@listProduk')
+            ->name('listProduk');
+        Route::get('/detail/{id}', 'HomeController@detailProduk')
+            ->name('detail');
+        Route::resource('kategori', 'KategoriController');
+        // Route::resource('transaksi', 'TransaksiController');
+    });
+
 Route::get('/', 'HomeController@index')->name('home');
