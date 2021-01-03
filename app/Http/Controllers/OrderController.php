@@ -97,9 +97,10 @@ class OrderController extends Controller
             ['status', 0],
         ])->first();
 
+
         $subtotal = Transaksi::where([
             ['id_user', auth()->user()->id],
-            ['id_transaksi', $idOrder],
+            ['id_transaksi', $idOrder->id],
         ])->sum('total');
         return view('homepage.transaksi.orderList', $data, compact('subtotal'));
     }

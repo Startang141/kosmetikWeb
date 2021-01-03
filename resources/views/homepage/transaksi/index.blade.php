@@ -44,7 +44,7 @@
           <!-- /.col-lg-3-->
           <div id="checkout" class="col-lg-12">
             <div class="box">
-              <form method="post" action="<?= route('order.store') ?>">
+              <form method="post" action="<?= route('order.store') ?>" enctype="multipart/form-data">
                 @csrf
                 <h1>Proses Pemesanan</h1>
                 <p>Silahkan Transfer dengan jumlah transfer berdasarkan subtotal diatas ke nomor rekening dibawah (pilih salah satu) lalu upload bukti transfer pada form dibawah</p>
