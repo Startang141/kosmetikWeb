@@ -27,7 +27,13 @@
                   <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details</a></p>
                   <p class="price">Rp. <?= $produk->harga ?></p>
                   @if (auth()->user())
-                    <p class="text-center buttons"><a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a></p>
+                    <form action="<?= route('cart.store') ?>" method="post">
+                      <input type="hidden" name="id_produk" value="<?= $produk->id ?>">
+                        <p class="text-center buttons">
+                            @csrf
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</button>
+                        </p>
+                    </form>
                     @else
                     <p class="text-center">Silahkan Login Terlebih Dahulu untuk melakukan transaksi.</p>  
                   @endif

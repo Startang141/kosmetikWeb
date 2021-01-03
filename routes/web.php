@@ -33,8 +33,8 @@ Route::prefix('produk')
             ->name('listProduk');
         Route::get('/detail/{id}', 'HomeController@detailProduk')
             ->name('detail');
-        Route::resource('kategori', 'KategoriController');
-        // Route::resource('transaksi', 'TransaksiController');
     });
+
+Route::resource('cart', 'CartController')->middleware('auth');
 
 Route::get('/', 'HomeController@index')->name('home');

@@ -24,7 +24,7 @@
                   <p class="price"> 
                     <del></del>Rp. <?= $p->harga ?>
                   </p>
-                  <p class="buttons"><a href="<?= route('detail', $p->id) ?>" class="btn btn-outline-secondary">View detail</a><a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a></p>
+                  <p class="buttons"><a href="<?= route('detail', $p->id) ?>" class="btn btn-outline-secondary">View detail</a></p>
                 </div>
               </div>
             </div>

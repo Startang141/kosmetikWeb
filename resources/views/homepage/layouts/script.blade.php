@@ -24,5 +24,6 @@
       <script src="<?= url('kosmetik/vendor/owl.carousel/owl.carousel.min.js') ?>"></script>
       <script src="<?= url('kosmetik/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js') ?>"></script>
       <script src="<?= url('kosmetik/js/front.js') ?>"></script>
+
     </body>
 </html>

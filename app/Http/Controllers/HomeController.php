@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,6 @@ class HomeController extends Controller
     function detailProduk($id)
     {
         $data['produk'] = Produk::with('kategori')->findOrFail($id);
-        // dd($data['produk']);
         return view('homepage.listProduk.detail', $data);
     }
 }
