@@ -10,4 +10,9 @@ class Transactions extends Model
     use HasFactory;
     protected $table = 'transaction';
     protected $fillable = ['id_user', 'total_bayar', 'alamat', 'bukti', 'status', 'atas_nama'];
+
+    function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }

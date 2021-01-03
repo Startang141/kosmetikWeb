@@ -24,7 +24,10 @@ Route::prefix('admin')
             ->name('admin.route');
         Route::resource('produk', 'ProdukController');
         Route::resource('kategori', 'KategoriController');
-        // Route::resource('transaksi', 'TransaksiController');
+        Route::resource('rekening', 'RekeningController');
+        Route::resource('transaksi', 'admin\TransaksiController', [
+            'as' => 'admin'
+        ]);
     });
 
 Route::prefix('produk')

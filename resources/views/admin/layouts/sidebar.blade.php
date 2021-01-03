@@ -12,7 +12,7 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="examples/dashboard.html">
+              <a class="nav-link" href="examples/dashboard.html">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
@@ -24,17 +24,17 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" href="<?= route('admin.transaksi.index') ?>">
                 <i class="ni ni-pin-3 text-primary"></i>
                 <span class="nav-link-text">Data Transaksi</span>
               </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a class="nav-link" href="examples/profile.html">
                 <i class="ni ni-single-02 text-yellow"></i>
                 <span class="nav-link-text">Testimonial</span>
               </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
               <a class="nav-link" href="examples/tables.html">
                 <i class="ni ni-bullet-list-67 text-default"></i>
@@ -44,7 +44,7 @@
             <li class="nav-item">
               <a class="nav-link" href="<?= route('kategori.index') ?>">
                 <i class="ni ni-key-25 text-info"></i>
-                <span class="nav-link-text">Kategori ?</span>
+                <span class="nav-link-text">Kategori</span>
               </a>
             </li>
           </ul>
