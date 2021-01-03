@@ -15,7 +15,8 @@
           </div>
           <div id="basket" class="col-lg-9">
             <div class="box">
-              <form method="post" action="checkout1.html">
+              <form action="<?= route('transaksi.store') ?>" method="post">
+                @csrf
                 <h1>Shopping cart</h1>
                 <p class="text-muted">You currently have 3 item(s) in your cart.</p>
                 <div class="table-responsive">
@@ -35,27 +36,24 @@
                             <td><a href="#"><img src="<?= url('produk/', $c->produk->gambar) ?>" alt="" class="img-fluid"></a></td>
                             <td><a href="#"><?= $c->produk->nama_produk ?></a></td>
                             <td>
-                                <input type="number" value="1" class="form-control quantity">
+                                <input type="number" name="quantity[]" value="1" class="form-control quantity">
+                                <input type="hidden" name="harga[]" value="<?= $c->produk->harga ?>" class="form-control quantity">
+                                <input type="hidden" name="id[]" value="<?= $c->produk->id ?>" class="form-control quantity">
                             </td>
                             <td>Rp. <?= $c->produk->harga ?></td>
                             <td></td>
                             <td>
-                              <form action="<?= route('cart.destroy', $c->id) ?>" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-trash-o"></i></button>
-                              </form>
+                                <a href="<?= route('cart.destroy', $c->id) ?>" class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
                   </table>
                 </div>
-                <!-- /.table-responsive-->
                 <div class="box-footer d-flex justify-content-between flex-column flex-lg-row">
                   <div class="left"><a href="<?= route('listProduk') ?>" class="btn btn-outline-secondary"><i class="fa fa-chevron-left"></i> Continue shopping</a></div>
                   <div class="right">
-                    <button type="submit" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
+                      <button type="submit" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
                   </div>
                 </div>
               </form>

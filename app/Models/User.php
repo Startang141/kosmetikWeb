@@ -40,4 +40,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function transaksi()
+    {
+        $this->hasMany(Transaksi::class, 'id_user', 'id');
+    }
 }

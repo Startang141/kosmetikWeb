@@ -20,7 +20,7 @@
                   @csrf
               </form>  
               </li>
-              <li class="list-inline-item"><a href="#">Daftar Transaksi</a></li>
+              <li class="list-inline-item"><a href="<?= route('order.index') ?>">Daftar Transaksi</a></li>
             </ul>
           </div>
           @endif

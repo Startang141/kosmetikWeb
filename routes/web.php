@@ -36,5 +36,8 @@ Route::prefix('produk')
     });
 
 Route::resource('cart', 'CartController')->middleware('auth');
+Route::resource('transaksi', 'TransaksiController')->middleware('auth');
+Route::resource('order', 'OrderController')->middleware('auth');
+Route::get('/order/view/{id}', 'OrderController@listOrder')->name('order.view');
 
 Route::get('/', 'HomeController@index')->name('home');
