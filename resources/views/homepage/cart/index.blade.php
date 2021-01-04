@@ -43,7 +43,7 @@
                             <td>Rp. <?= $c->produk->harga ?></td>
                             <td></td>
                             <td>
-                                <a href="<?= route('cart.destroy', $c->id) ?>" class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
+                                <a class="btn btn-primary" data-toggle="modal" data-target="#hapusProduk<?= $c->id ?>"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                     @endforeach
@@ -74,3 +74,30 @@
     </div>
   </div>
 @endsection
+
+@foreach ($cart as $c)
+
+<div class="modal fade" id="hapusProduk<?= $c->id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hapus barang</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Hapus produk <?= $c->produk->nama_produk ?> di cart??
+        <form action="<?= route('cart.destroy', $c->id) ?>" method="post">
+          @csrf
+          @method('DELETE')
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-danger">Hapus</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+@endforeach
