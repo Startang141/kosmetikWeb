@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use SweetAlert;
 
 class CartController extends Controller
 {
@@ -37,6 +38,7 @@ class CartController extends Controller
             'id_user' => $userId,
         ]);
 
+        alert()->success('Produk berhasil ditambahkan', 'Berhasil !!');
         return redirect()->route('detail', $request->id_produk);
     }
 

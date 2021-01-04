@@ -21,6 +21,7 @@
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?= url('kosmetik/css/custom.css') ?>">
     <!-- Favicon-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
     <link rel="shortcut icon" href="favicon.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>

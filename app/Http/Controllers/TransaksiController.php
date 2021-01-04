@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Rekening;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
+use SweetAlert;
 
 class TransaksiController extends Controller
 {
@@ -48,7 +49,6 @@ class TransaksiController extends Controller
             $data->total = $total;
             $data->save();
         }
-
         return redirect()->route('transaksi.index');
     }
 

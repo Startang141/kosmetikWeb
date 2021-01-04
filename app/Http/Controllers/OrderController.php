@@ -59,7 +59,7 @@ class OrderController extends Controller
             ['id_user', auth()->user()->id],
             ['status', 0],
         ])->delete();
-
+        alert()->success('Pemesanan berhasil di proses', 'Berhasil !!');
         return redirect()->route('order.index');
     }
 
