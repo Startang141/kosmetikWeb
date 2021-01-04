@@ -20,7 +20,7 @@
                       <th scope="col" class="sort" data-sort="budget">Nama Produk</th>
                       <th scope="col" class="sort" data-sort="status">Gambar</th>
                       <th scope="col">Kategori</th>
-                      <th scope="col" class="sort" data-sort="completion">Terjual</th>
+                      {{-- <th scope="col" class="sort" data-sort="completion">Terjual</th> --}}
                       <th scope="col">Stok</th>
                       <th scope="col">Action</th>
                     </tr>
@@ -42,8 +42,8 @@
                             </a>
                         </td>
                         <td><?= $p->kategori->nama_kategori ?></td>
-                        <td><?= $p->terjual ?> Terjual</td>
-                        <td class="text-right"><?= $p->stok ?> pcs</td>
+                        {{-- <td><?= $p->terjual ?> Terjual</td> --}}
+                        <td><?= $p->stok ?> pcs</td>
                         <td>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#editProduk<?= $p->id ?>">Edit</button>
                             <button class="btn btn-danger" data-toggle="modal" data-target="#hapusProduk<?= $p->id ?>">Hapus</button>

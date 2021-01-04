@@ -13,8 +13,11 @@ class CreateRekeningsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rekenings', function (Blueprint $table) {
+        Schema::create('rekening', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_bank', 50);
+            $table->string('atas_nama', 255);
+            $table->double('no_rek');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateRekeningsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rekenings');
+        Schema::dropIfExists('rekening');
     }
 }

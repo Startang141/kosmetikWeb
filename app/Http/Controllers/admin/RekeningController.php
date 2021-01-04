@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Rekening;
 use Illuminate\Http\Request;
 
 class RekeningController extends Controller
@@ -14,7 +15,8 @@ class RekeningController extends Controller
      */
     public function index()
     {
-        //
+        $data['rekening'] = Rekening::get();
+        return view('admin.rekening.index', $data);
     }
 
     /**
@@ -35,7 +37,13 @@ class RekeningController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Rekening::create([
+            'nama_bank' => $request->bank,
+            'atas_nama' => $request->atas_nama,
+            'no_rek' => $request->norek,
+        ]);
+
+        return redirect()->route('rekening.index');
     }
 
     /**
@@ -69,7 +77,12 @@ class RekeningController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Rekening::findOrFail($id);
+        $data->update([
+            'nama_bank' => $request->bank,
+            'atas_nama' => $request->atas_nama,
+            'no_rek' => $request->norek,
+        ]);
     }
 
     /**
@@ -80,6 +93,8 @@ class RekeningController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Rekening::findOrFail($id);
+        $data->delete();
+        return redirect()->route('rekening.index');
     }
 }

@@ -58,12 +58,17 @@
                       </tr>
                     </thead>
                     <tbody>
+                      @php
+                          $no = 1;
+                      @endphp
+                      @foreach ($rekening as $r)
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <th scope="row"><?= $no++ ?></th>
+                        <td><?= $r->nama_bank ?></td>
+                        <td><?= $r->no_rek ?></td>
+                        <td><?= $r->atas_nama ?></td>
                       </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 <div class="content py-3">

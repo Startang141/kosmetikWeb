@@ -39,7 +39,7 @@
                       <td>Rp. <?= $o->total_bayar ?></td>
                       <td>
                         @if ($o->status == 0)
-                          <span class="badge badge-info">Proses Konfirmasi</span>
+                          <span class="badge badge-warning">Proses Konfirmasi</span>
                           @elseif ($o->status == 1)
                           <span class="badge badge-info">Dikonfirmasi</span>
                         @endif

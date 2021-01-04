@@ -44,7 +44,7 @@
                   <tfoot>
                     <tr>
                       <th colspan="5" class="text-right">Order subtotal</th>
-                      <th>Rp. <?= $subtotal ?></th>
+                      <th>Rp. <?= $subtotal->total_bayar ?></th>
                     </tr>
                     <tr>
                       <th colspan="5" class="text-right">Shipping and handling</th>
@@ -53,7 +53,7 @@
                    
                     <tr>
                       <th colspan="5" class="text-right">Total</th>
-                      <th>Rp. <?= $subtotal ?></th>
+                      <th>Rp. <?= $subtotal->total_bayar ?></th>
                     </tr>
                   </tfoot>
                 </table>

@@ -19,6 +19,6 @@ class Admin
         if (auth()->user()->role == 1) {
             return $next($request);
         }
-        return redirect('home')->with('error', 'Admin gate here!');
+        return redirect('/')->with('error', 'Admin gate here!');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rekening;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,8 @@ class TransaksiController extends Controller
      */
     public function index()
     {
+        $data['rekening'] = Rekening::get();
+
         $data['detail'] = Transaksi::with('produk')->where([
             ['id_user', auth()->user()->id],
             ['id_transaksi', 0]

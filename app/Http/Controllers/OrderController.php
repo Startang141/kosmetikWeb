@@ -92,16 +92,8 @@ class OrderController extends Controller
             ['id_user', auth()->user()->id],
         ])->get();
 
-        $idOrder = Transactions::select('id')->where([
-            ['id_user', auth()->user()->id],
-            ['status', 0],
-        ])->first();
 
-
-        $subtotal = Transaksi::where([
-            ['id_user', auth()->user()->id],
-            ['id_transaksi', $idOrder->id],
-        ])->sum('total');
+        $subtotal = Transactions::select('total_bayar')->where('id', $id)->first();
         return view('homepage.transaksi.orderList', $data, compact('subtotal'));
     }
 }
