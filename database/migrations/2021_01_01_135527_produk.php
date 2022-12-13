@@ -18,6 +18,7 @@ class Produk extends Migration
             $table->bigInteger('id_kategori')->unsigned();
             $table->foreign('id_kategori')->references('id')->on('kategori')->onDelete('cascade');
             $table->string('nama_produk', 100);
+            $table->string('gambar', 100);
             $table->integer('stok');
             $table->integer('terjual');
             $table->timestamps();
