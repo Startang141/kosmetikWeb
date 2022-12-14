@@ -118,7 +118,7 @@ class ProdukController extends Controller
 
     public function destroy($id)
     {
-        $data = Produk::findOrFail($id);
+        $data = Produk::all()->where('id', $id)->first();
         $storage = new StorageClient([
             'keyFilePath' => public_path('key.json')
         ]);
