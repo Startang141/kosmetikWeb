@@ -119,7 +119,16 @@ class ProdukController extends Controller
     public function destroy($id)
     {
         $data = Produk::findOrFail($id);
-        $data->delete();
+        $storage = new StorageClient();
+
+        $bucketName = env('GOOGLE_CLOUD_BUCKET');
+        $bucket = $storage->bucket($bucketName);
+        $object = $bucket->object($barangs->foto);
+
+
+
+        $object->delete();
+        $data->delete($data);
         return redirect()->route('produk.index');
     }
 }
