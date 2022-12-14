@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Google\Cloud\Storage\StorageClient;
+use Google\Cloud\Core\Exception\NotFoundException;
 use Illuminate\Support\Facades\URL;
 
 class ProdukController extends Controller
@@ -123,11 +124,9 @@ class ProdukController extends Controller
             'keyFilePath' => public_path('key.json')
         ]);
 
-
         $bucketName = env('GOOGLE_CLOUD_BUCKET');
         $bucket = $storage->bucket($bucketName);
-        $object = $bucket->object($data->foto);
-
+        $object = $bucket->object($data->gambar);
 
 
         $object->delete();
