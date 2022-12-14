@@ -37,8 +37,8 @@ class ProdukController extends Controller
         $request->validate([
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        $imageName = time() . '.' . $request->gambar->extension();
-        $request->gambar->move(public_path('produk'), $imageName);
+        // $imageName = time() . '.' . $request->gambar->extension();
+        // $request->gambar->move(public_path('produk'), $imageName);
         if ($request->file('gambar')) {
             $image_name = $request->file('gambar');
             // $image_name = $request->file('gambar')->store('images', 'public');
