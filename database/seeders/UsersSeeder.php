@@ -18,14 +18,16 @@ class UsersSeeder extends Seeder
             [
                 'name' => 'Admin',
                 'email' => 'admin@admin.com',
-                'role' => '1',
+                'role' => 1,
                 'password' => bcrypt('admin'),
+                'remember_token' => '909909',
             ],
             [
                 'name' => 'Regular User',
                 'email' => 'user@mail.com',
-                'role' => '0',
+                'role' => 0,
                 'password' => bcrypt('user'),
+                'remember_token' => '909908',
             ],
         ];
 
