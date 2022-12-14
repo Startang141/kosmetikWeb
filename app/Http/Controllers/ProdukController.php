@@ -119,7 +119,10 @@ class ProdukController extends Controller
     public function destroy($id)
     {
         $data = Produk::findOrFail($id);
-        $storage = new StorageClient();
+        $storage = new StorageClient([
+            'keyFilePath' => public_path('key.json')
+        ]);
+
 
         $bucketName = env('GOOGLE_CLOUD_BUCKET');
         $bucket = $storage->bucket($bucketName);
