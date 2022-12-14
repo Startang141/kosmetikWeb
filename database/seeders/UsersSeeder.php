@@ -19,14 +19,14 @@ class UsersSeeder extends Seeder
                 'name' => 'Admin',
                 'email' => 'admin@admin.com',
                 'role' => 1,
-                'password' => bcrypt('admin'),
+                'password' => Hash::make('admin2022'),
                 'remember_token' => '909909',
             ],
             [
                 'name' => 'Regular User',
                 'email' => 'user@mail.com',
                 'role' => 0,
-                'password' => bcrypt('user'),
+                'password' => Hash::make('user2022'),
                 'remember_token' => '909908',
             ],
         ];
