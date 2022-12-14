@@ -18,9 +18,10 @@ use Illuminate\Support\Facades\Artisan;
 */
 
 Auth::routes();
-Route::get('/config', function () {
-    Artisan::call('migrate:fresh');
-    Artisan::call('db:seed');
+Route::get('/mysql', function () {
+    Artisan::call('migrate:rollback', ['--force' => true]);
+    Artisan::call('migrate', ['--force' => true]);
+    Artisan::call('db:seed', ['--force' => true]);
 });
 Route::prefix('admin')
     ->middleware(['admin'])
