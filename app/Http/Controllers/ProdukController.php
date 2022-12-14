@@ -104,14 +104,57 @@ class ProdukController extends Controller
         $request->validate([
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        $imageName = time() . '.' . $request->gambar->extension();
-        $request->gambar->move(public_path('produk'), $imageName);
+        $image_name = '';
+        $produks = Produk::where('id', $id)->first();
+        $storage = new StorageClient();
+        $bucketName = env('GOOGLE_CLOUD_BUCKET');
+        $bucket = $storage->bucket($bucketName);
+        $object = $bucket->object($produks->gambar);
+
+        if ($request->file('gambar') && $object != null) {
+            $image_name = $request->file('gambar');
+            // $storage = new StorageClient();
+
+            // $bucketName = env('GOOGLE_CLOUD_BUCKET');
+            // $bucket = $storage->bucket($bucketName);
+            // $object = $bucket->object($barangs->foto);
+
+
+            $object->delete();
+            // $image_name = $request->file('foto')->store('images', 'public');
+            //get filename with extension
+            $filenamewithextension = pathinfo($request->file('gambar')->getClientOriginalName(), PATHINFO_FILENAME);
+            // $filenamewithextension = $request->file('foto')->getClientOriginalName();
+
+            //get filename without extension
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+
+            //get file extension
+            $extension = $request->file('gambar')->getClientOriginalExtension();
+
+            //filename to store
+            $filenametostore = $filename . '_' . uniqid() . '.' . $extension;
+
+            Storage::put('public/uploads/' . $filenametostore, fopen($request->file('gambar'), 'r+'));
+
+            $filepath = storage_path('app/public/uploads/' . $filenametostore);
+
+            $object = $bucket->upload(
+                fopen($filepath, 'r'),
+                [
+                    'predefinedAcl' => 'publicRead'
+                ]
+            );
+
+            // delete file from local disk
+            Storage::delete('public/uploads/' . $filenametostore);
+        }
 
         $data = Produk::findOrFail($id);
         $data->update([
             'id' => $request->kategori,
             'nama_produk' => $request->nama_produk,
-            'gambar' => $imageName,
+            'gambar' => $filenametostore,
             'stok' => $request->stok,
         ]);
         return redirect()->route('produk.index');
