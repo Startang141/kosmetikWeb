@@ -38,7 +38,7 @@
                         <td class="budget"><?= $p->nama_produk ?></td>
                         <td>
                             <a href="#" class="avatar avatar-md rounded-circle" data-toggle="tooltip">
-                              <img src="<?= url('produk/', $p->gambar) ?>">
+                              <img src="<?= url('https://storage.googleapis.com/btgstr/', $p->gambar) ?>">
                             </a>
                         </td>
                         <td><?= $p->kategori->nama_kategori ?></td>
