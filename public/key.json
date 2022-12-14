@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "unified-destiny-364515",
+  "private_key_id": "43a4e2ced7dee2b57574b704eb16aec1b5735f4a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDP7i8fqh/DIpck\n46WDcRnnj7fh1p2rYRGuDT2P/UorR0aO629bFrACr26RdbaJF5+66nfcuOvL9bDj\nS18EbaZFu51dk02iNMMv1L99ziv8ZiBQiWkOoznGcJ2NDvbciR5O5OmgoGHpou9c\n3CkWFqTMUeNsTf+aa/qFKGSUfdtCdlAIRGWjANzMi4RG0e/B01MtZp1xsJo93sYh\nMTzhrvxe2IUsk0CfQYMRi0XoFnVKmhYM3RbjmARYsWZzagGw8MTn9Htbxa//0XPE\nvqODrdPlcUhWVJHNep7Jjlmfl+kDYCpqmDsjhZWYPYZo2MbSYRGGMAPwjgY/NvKt\nhwt07Cq7AgMBAAECggEACu2tW2AxKCvmvsEaP2TP5DxJAV0qz0mcSMYYYLuCzPCD\nlFpqcWKpYJLA4HNL4zuzIPtWzmqHtiIVKHUbKtvqe8rHFBZ8Y5SbV6W6ZM3TwQHL\nHACE3YiVrkjX9wR81A1+4s2kO9WCH+n446wMmsUY50Y8ikI1N3QKaDo9wxI0VnNS\nGPy02QlXMckL90ZNeeZopMtOsos2/qV6X+95c4TxjPEweqSRlMp/4snTBrYVZklB\niNSEKNZpLqa7D3B5WuT4SXPXnoYYw7MiRFvszOUGpjs+53PLLVp8f6gWCCxpIeWk\nflj5ZgjfdeYbWHZlJeVhP2vdorT60uW9j9T9v+fjsQKBgQD9OKxUV081/iVR6OFB\n698BctqDRWqeJ6M0+WICYSIZwkoYZubzvQm+E6SgTHnMr+wWS84E2T23QpdbpB9h\nw8++ZJEmljZZNr20PdcypQ/PKf+Bl/29fnZdA3p0r+2d42hOV9dQoLBLN1LBUanZ\nwsZH+K2v/HFdes53P1V6iqUI6wKBgQDSNkiX1iQD2OXTNjIGrAItS8/iS1ii8tuU\nUhKI8ubPEtIsuDei4klCUDvCOAzgK0wrE7zVqkmAxbFFQDhk40HcrRKc35fwWTsk\nFZY7oblKibsyH4luvNB3RkaayATeVSlwrfnm+uqVf0879mPCo5ORRON/uTQke/on\ns7eiworxcQKBgA707QDiU1RuGYg4CC4bn4V3Yj7Et+J1ludHH6niUOBSoIvGcDfP\nX6bxhBTPz5XugjRi791Lc6DCdyw7inr81OV7DTPJRZaJbDUcPfzI0SE8atIdxygN\nMzKVRQNlbNSZnQyblaU2iJM4xlOS3kR1g762ipPNhmiuG0nh3MurKspXAoGAEmEQ\no8XjTDrQjVD1usObRR6VxHFWBJk7PZKXcEXcjEpW+fX5V1J1mUiukOKZrZfbhwCo\nx/2lg47FWwqsY5XDEmpHcFPUUv1aQGNqyTfwnWXBajZ7q6TyjRsl3S6TzmSfxOxR\nJzLVA9EnulRmkIQAyPi+81HcDzyPuJzr910PDOECgYA1v1fQOUKIxi8hhyXYmu7Q\nflUvCGtSARdSP6/HLsJwZFPS/3gmxEXyABDxganYGxwe0kN8ygQXowPTVyELNsvY\n4zNTBEvPBqTGFgQeky0EwNJX0mxLBbei5o4iN5I1bU7n79ApP6xhHANhexK4tgD5\nh4qbfyAJQpJ3+H1B4AKBjw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "bintang-star@unified-destiny-364515.iam.gserviceaccount.com",
+  "client_id": "116068243764798255526",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bintang-star%40unified-destiny-364515.iam.gserviceaccount.com"
+}
