@@ -4,6 +4,7 @@ use App\Models\Kategori;
 use App\Models\Produk;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Auth::routes();
+Route::get('/config', function () {
+    Artisan::call('migrate:fresh');
+    Artisan::call('db:seed');
+});
 Route::prefix('admin')
     ->middleware(['admin'])
     ->group(function () {
