@@ -123,7 +123,7 @@ class ProdukController extends Controller
 
         $bucketName = env('GOOGLE_CLOUD_BUCKET');
         $bucket = $storage->bucket($bucketName);
-        $object = $bucket->object($barangs->foto);
+        $object = $bucket->object($data->foto);
 
 
 
