@@ -105,11 +105,11 @@ class ProdukController extends Controller
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $image_name = '';
-        $produks = Produk::where('id', $id)->first();
+        $data = Produk::where('id', $id)->first();
         $storage = new StorageClient();
         $bucketName = env('GOOGLE_CLOUD_BUCKET');
         $bucket = $storage->bucket($bucketName);
-        $object = $bucket->object($produks->gambar);
+        $object = $bucket->object($data->gambar);
 
         if ($request->file('gambar') && $object != null) {
             $image_name = $request->file('gambar');
@@ -150,7 +150,7 @@ class ProdukController extends Controller
             Storage::delete('public/uploads/' . $filenametostore);
         }
 
-        $data = Produk::findOrFail($id);
+        
         $data->update([
             'id' => $request->kategori,
             'nama_produk' => $request->nama_produk,
